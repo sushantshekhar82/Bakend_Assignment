@@ -30,7 +30,7 @@ const userUuidDetailsValidator = [
 router.post("/register",registrationValidator, async (req: Request, res: Response) => {
   try {
     const { first_name, last_name, email, password}:User = req.body;
-
+    
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).send({

@@ -37,6 +37,7 @@ const userUuidDetailsValidator = [
 router.post("/register", registrationValidator, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { first_name, last_name, email, password } = req.body;
+        console.log("react calling", first_name, last_name, email, password);
         const errors = (0, express_validator_1.validationResult)(req);
         if (!errors.isEmpty()) {
             return res.status(400).send({
